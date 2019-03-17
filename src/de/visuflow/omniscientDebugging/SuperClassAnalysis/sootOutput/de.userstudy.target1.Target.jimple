@@ -1,0 +1,62 @@
+public class de.userstudy.target1.Target extends de.userstudy.target1.SuperTarget
+{
+    java.lang.String data;
+
+    public void <init>()
+    {
+        de.userstudy.target1.Target r0;
+
+        r0 := @this: de.userstudy.target1.Target;
+
+        specialinvoke r0.<de.userstudy.target1.SuperTarget: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] r0;
+        de.userstudy.target1.Target $r3, $r4;
+        java.lang.String $r5, $r6, $r7, $r8;
+
+        r0 := @parameter0: java.lang.String[];
+
+        $r3 = new de.userstudy.target1.Target;
+
+        specialinvoke $r3.<de.userstudy.target1.Target: void <init>()>();
+
+        $r4 = new de.userstudy.target1.Target;
+
+        specialinvoke $r4.<de.userstudy.target1.Target: void <init>()>();
+
+        $r5 = staticinvoke <de.userstudy.target1.Target: java.lang.String getData(de.userstudy.target1.SuperTarget)>($r3);
+
+        $r3.<de.userstudy.target1.Target: java.lang.String data> = $r5;
+
+        $r6 = $r3.<de.userstudy.target1.Target: java.lang.String data>;
+
+        $r7 = staticinvoke <de.userstudy.target1.Target: java.lang.String copyData(java.lang.String)>($r6);
+
+        $r4.<de.userstudy.target1.Target: java.lang.String data> = $r7;
+
+        virtualinvoke $r3.<de.userstudy.target1.Target: void overwrite(java.lang.String)>("");
+
+        $r8 = $r3.<de.userstudy.target1.Target: java.lang.String data>;
+
+        staticinvoke <de.userstudy.target1.Target: void dangerousTransmission(java.lang.String)>($r8);
+
+        return;
+    }
+
+    static java.lang.String getData(de.userstudy.target1.SuperTarget)
+    {
+        de.userstudy.target1.SuperTarget r0;
+        java.lang.String $r1;
+
+        r0 := @parameter0: de.userstudy.target1.SuperTarget;
+
+        $r1 = staticinvoke <de.userstudy.target1.SuperTarget: java.lang.String getData(de.userstudy.target1.SuperTarget)>(r0);
+
+        return $r1;
+    }
+}

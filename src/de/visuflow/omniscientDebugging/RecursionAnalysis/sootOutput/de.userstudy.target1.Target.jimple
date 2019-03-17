@@ -1,0 +1,108 @@
+public class de.userstudy.target1.Target extends java.lang.Object
+{
+    java.lang.String data;
+
+    public void <init>()
+    {
+        de.userstudy.target1.Target r0;
+
+        r0 := @this: de.userstudy.target1.Target;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] r0;
+        de.userstudy.target1.Target $r3, $r4;
+        java.lang.String $r5, $r6, $r7;
+
+        r0 := @parameter0: java.lang.String[];
+
+        $r3 = new de.userstudy.target1.Target;
+
+        specialinvoke $r3.<de.userstudy.target1.Target: void <init>()>();
+
+        $r4 = new de.userstudy.target1.Target;
+
+        specialinvoke $r4.<de.userstudy.target1.Target: void <init>()>();
+
+        specialinvoke $r3.<de.userstudy.target1.Target: void recursion(int)>(10);
+
+        $r5 = $r3.<de.userstudy.target1.Target: java.lang.String data>;
+
+        $r6 = staticinvoke <de.userstudy.target1.Target: java.lang.String copyData(java.lang.String)>($r5);
+
+        $r4.<de.userstudy.target1.Target: java.lang.String data> = $r6;
+
+        $r7 = $r4.<de.userstudy.target1.Target: java.lang.String data>;
+
+        staticinvoke <de.userstudy.target1.Target: void dangerousTransmission(java.lang.String)>($r7);
+
+        return;
+    }
+
+    private static java.lang.String copyData(java.lang.String)
+    {
+        java.lang.String r0;
+
+        r0 := @parameter0: java.lang.String;
+
+        return r0;
+    }
+
+    private static void dangerousTransmission(java.lang.String)
+    {
+        java.lang.String r0, $r4;
+        java.lang.StringBuilder $r1, $r3;
+        java.io.PrintStream $r2;
+
+        r0 := @parameter0: java.lang.String;
+
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+
+        $r1 = new java.lang.StringBuilder;
+
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("Key handed out: ");
+
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r0);
+
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>($r4);
+
+        return;
+    }
+
+    private static java.lang.String getSecret()
+    {
+        return "I am secret.";
+    }
+
+    private void recursion(int)
+    {
+        de.userstudy.target1.Target r0;
+        int i0;
+        java.lang.String r2;
+
+        r0 := @this: de.userstudy.target1.Target;
+
+        i0 := @parameter0: int;
+
+        if i0 != 0 goto label1;
+
+        r2 = staticinvoke <de.userstudy.target1.Target: java.lang.String getSecret()>();
+
+        goto label2;
+
+     label1:
+        r2 = "";
+
+     label2:
+        r0.<de.userstudy.target1.Target: java.lang.String data> = r2;
+
+        return;
+    }
+}
